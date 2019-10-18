@@ -13,5 +13,8 @@ DATE_POSTFIX=`date +"%Y-%m-%d_%H-%M-%S"`
 
 docker exec $(docker ps | grep mysql | cut -f 1 -d ' ') mysqldump --single-transaction --set-gtid-purged=OFF youdata > ${BACKUP_PATH}/backup-${DATE_POSTFIX}.sql
 
+# if bin_log is open
+# docker exec $(docker ps | grep mysql | cut -f 1 -d ' ') mysqldump --single-transaction --set-gtid-purged=OFF --master-data=2 youdata > ${BACKUP_PATH}/backup-${DATE_POSTFIX}.sql
+
 # 删除5天前的备份
 find ${BACKUP_PATH} -mtime +5 -type f -delete
