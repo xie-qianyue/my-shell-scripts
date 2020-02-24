@@ -5,3 +5,6 @@ date2=`date +%Y-%m-%d-%H%M%S`
 # split string by pattern
 version="6.2"
 echo "${verion/.}"
+
+# cut string
+echo "Docker Root Dir: /data/docker" | cut -f 2 -d ":"
