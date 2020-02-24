@@ -8,3 +8,8 @@ echo "${verion/.}"
 
 # cut string
 echo "Docker Root Dir: /data/docker" | cut -f 2 -d ":"
+
+# check if argument exists
+if [ -z "$1" ]; then
+    echo "No argument supplied"
+fi
