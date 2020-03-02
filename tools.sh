@@ -29,8 +29,8 @@ echo "$(($duration / 60)) minutes and $(($duration % 60)) seconds elapsed."
 
 # read string to array
 # https://github.com/dylanaraps/pure-bash-bible#split-a-string-on-a-delimiter
-# question: read -d ?
-IFS=' ' read -d "" -ra cid_arr <<< $mysql_cid
+# 上面链接的方法里 read 带了参数 -d ""，不知道是为了什么，在有数的 self-check.sh 里，这个参数会导致最后一个元素跟着一个换行符
+IFS=' ' read -ra cid_arr <<< $mysql_cid
 
 # get array length
 ${#cid_arr[@]}
