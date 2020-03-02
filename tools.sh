@@ -26,3 +26,7 @@ SECONDS=0
 # do some work
 duration=$SECONDS
 echo "$(($duration / 60)) minutes and $(($duration % 60)) seconds elapsed."
+
+# read string to array
+# https://github.com/dylanaraps/pure-bash-bible#split-a-string-on-a-delimiter
+IFS=' ' read -d "" -ra cid_arr <<< $mysql_cid
