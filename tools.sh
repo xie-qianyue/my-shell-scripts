@@ -19,3 +19,10 @@ df -h /var/lib/docker | tail -1 | awk '{print $5}'
 if [ -z "$1" ]; then
     echo "No argument supplied"
 fi
+
+# calculate seconds spent
+# https://stackoverflow.com/a/8903280/1165178
+SECONDS=0
+# do some work
+duration=$SECONDS
+echo "$(($duration / 60)) minutes and $(($duration % 60)) seconds elapsed."
